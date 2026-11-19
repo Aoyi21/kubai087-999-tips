@@ -2,8 +2,8 @@
  "source": "@Kubai087",
  "series": "999 个小技巧，让你 Vibe 的产品更有质感",
  "profile": "https://x.com/Kubai087",
- "collected_at": "2026-11-17T10:36:23+08:00",
- "count": 19,
+ "collected_at": "2026-11-19T10:28:34+08:00",
+ "count": 20,
  "items": [
   {
    "num": 1,
@@ -565,7 +565,36 @@
     "preview_height": 1066,
     "preview_embedded": true
    }
+  },
+  {
+   "num": 20,
+   "title": "开关、复选框、单选和下拉，怎么选？",
+   "date": "2026-11-19",
+   "main_url": "https://x.com/Kubai087/status/2123217190052827633",
+   "tip": "日更栏目《999 个小技巧，让你 Vibe 的产品更有质感》\n\n✨ 开关、复选框、单选和下拉，怎么选？——《999 个小技巧，让你 Vibe 的产品更有质感》020\n\n今天分享几个基础控件的使用场景，并附一条诊断 Prompt，帮你找出项目中的类似问题，直接复制即可 ⬇️\n\n1. 开关（Switch）与复选框（Checkbox）\n\n两者的核心区别在于何时生效：开关拨动后立即生效，因此适合设置页等非表单场景；复选框通常随表单一起提交，需要搭配保存按钮。\n\n另外，一件事的开与关应当用一个开关表示，而不是两个单选（Radio）\n\n2. 下拉选择（Select）与下拉菜单（Dropdown）\n\n两者外观相似，承载的内容却不同。下拉菜单里是动作，点击后立即执行，常用于收纳工具栏或页面顶部的按钮；下拉选择里是数值、状态或选项，选中后显示在输入框中，比如语言选择。\n\n此外，下拉菜单也常以图标按钮（icon button）作为触发器，与主按钮并排放置，收纳其他相关的操作，比如“发送”旁边的“定时发送”“存为草稿”。\n\n3. 分段选择（Segment）与下拉选择（Select）\n\n两者都用于单选。2–5 个简短的选项，适合用分段选择，所有选项一目了然；如果选项更多、文字较长，或者选项的值并不固定，就应改用下拉选择，以免内容变化导致界面跳动。\n\n选项特别多时，可以在菜单列表顶部加一个搜索框，并做好没有结果时的空状态。\n\n4. 单选（Radio）与复选框（Checkbox）\n\n单选适合问卷这类需要列出全部选项的单选题。由于选中之后无法取消，最好提供“暂不确定”之类的选项。允许选择多项时，则使用复选框。\n\n下拉选择中也是如此：单选时不用单选圆圈，而是在选中项后打勾（checkmark）；多选时在每一项前加复选框。\n\n001–020 期均收录在主页 Highlights，栏目每日更新，期待你的推荐！🫶 非常感谢",
+   "prompts": [
+    {
+     "part": 1,
+     "text": "Prompt\n\nReview the choice controls in my product (switches, checkboxes, radio buttons, segmented controls, selects and dropdown menus) and decide for each one whether it is the right control. Diagnose first; change only what I approve, in my own code and components, without new dependencies.\n\n1. Read the product\nFind every place a person picks something, turns something on or off, or runs an action from a list. For each, note what it sets or does, how many options it has, how many can be picked, and whether it takes effect at once or on Save.\n\n2. How to choose\na. Switch or checkbox: when it takes effect.\n- Switch: takes effect the moment it is flipped (settings that save on their own, no Save button).\n- Checkbox: one answer in a form, applied on Submit or Save.\n- One thing on or off is one switch, never two radios (On / Off). If both sides have names of their own (Light / Dark), it is a choice of one: see (c).\n\nb. Select or dropdown menu: a value or an action.\n- Select: holds a value; after a pick the field shows it, and the picked option has a tick in the list.\n- Dropdown menu: holds actions (Export, Duplicate, Delete). A pick runs it, the button keeps its name, and the result shows elsewhere. Menus go in page headers, toolbars and row ends, not among form fields. A split button pairs a main action with a menu of related ones (Send, with Send later and Save as draft beside it).\n- Tabs switch to other content and set nothing; a segmented control sets a value or the view of the same content.\n\nc. One of several: by the number of options.\n- 2 to 5 short options: a segmented control.\n- 2 to 5 that each need a line: radio buttons, stacked under the label.\n- 6 or more, or labels that change or grow (names, dates, items people add): a select, so the layout never shifts.\n- Hundreds (time zones, countries, people): a select with search, and a clear message when nothing matches.\n\nd. Radio or checkbox: how many can be picked.\n- Radio: exactly one, all options in view, as in a survey question. It can't be cleared once picked, so add a \"none\" option (Not sure yet) when that is a fair answer.\n- Checkbox: any number, none included.\n- Inside a select: a tick for one value, never radio circles; a checkbox before each option for several, with the picks shown as chips in the field.\n\n3. Report before changing\nGive me a table, one row per control: where, what it sets or does, the control now, the control it should be (or \"right as it is\"), why in one line, and anything else that changes (a Save button, a \"none\" option, an action moved out of a form). Flag every change in behaviour, ask about cases that could go either way, and wait for me to choose.\n\n4. Change what I approve\nUse my components, or the platform's own controls when I have none. Keep the values people already saved. Check that switches act at once and checkboxes on submit, selects show their value, menu buttons keep their name, and everything works by keyboard and screen reader.",
+     "url": "https://x.com/Kubai087/status/2123219668165140511"
+    }
+   ],
+   "prompt_combined": "Prompt\n\nReview the choice controls in my product (switches, checkboxes, radio buttons, segmented controls, selects and dropdown menus) and decide for each one whether it is the right control. Diagnose first; change only what I approve, in my own code and components, without new dependencies.\n\n1. Read the product\nFind every place a person picks something, turns something on or off, or runs an action from a list. For each, note what it sets or does, how many options it has, how many can be picked, and whether it takes effect at once or on Save.\n\n2. How to choose\na. Switch or checkbox: when it takes effect.\n- Switch: takes effect the moment it is flipped (settings that save on their own, no Save button).\n- Checkbox: one answer in a form, applied on Submit or Save.\n- One thing on or off is one switch, never two radios (On / Off). If both sides have names of their own (Light / Dark), it is a choice of one: see (c).\n\nb. Select or dropdown menu: a value or an action.\n- Select: holds a value; after a pick the field shows it, and the picked option has a tick in the list.\n- Dropdown menu: holds actions (Export, Duplicate, Delete). A pick runs it, the button keeps its name, and the result shows elsewhere. Menus go in page headers, toolbars and row ends, not among form fields. A split button pairs a main action with a menu of related ones (Send, with Send later and Save as draft beside it).\n- Tabs switch to other content and set nothing; a segmented control sets a value or the view of the same content.\n\nc. One of several: by the number of options.\n- 2 to 5 short options: a segmented control.\n- 2 to 5 that each need a line: radio buttons, stacked under the label.\n- 6 or more, or labels that change or grow (names, dates, items people add): a select, so the layout never shifts.\n- Hundreds (time zones, countries, people): a select with search, and a clear message when nothing matches.\n\nd. Radio or checkbox: how many can be picked.\n- Radio: exactly one, all options in view, as in a survey question. It can't be cleared once picked, so add a \"none\" option (Not sure yet) when that is a fair answer.\n- Checkbox: any number, none included.\n- Inside a select: a tick for one value, never radio circles; a checkbox before each option for several, with the picks shown as chips in the field.\n\n3. Report before changing\nGive me a table, one row per control: where, what it sets or does, the control now, the control it should be (or \"right as it is\"), why in one line, and anything else that changes (a Save button, a \"none\" option, an action moved out of a form). Flag every change in behaviour, ask about cases that could go either way, and wait for me to choose.\n\n4. Change what I approve\nUse my components, or the platform's own controls when I have none. Keep the values people already saved. Check that switches act at once and checkboxes on submit, selects show their value, menu buttons keep their name, and everything works by keyboard and screen reader.",
+   "main_post_id": "2123217190052827633",
+   "media": {
+    "type": "video_poster",
+    "media_key": "13_2123106760907177984",
+    "preview_local": "kubai087-media/020.jpg",
+    "preview_remote": "https://pbs.twimg.com/amplify_video_thumb/2123106760907177984/img/0qN9njPkcgKsORcQ.jpg",
+    "video_remote": "https://video.twimg.com/amplify_video/2123106760907177984/vid/avc1/720x960/ocVdhxvpKJfGZleQ.mp4",
+    "duration_ms": 62421,
+    "width": 2160,
+    "height": 2880,
+    "preview_width": 800,
+    "preview_height": 1066,
+    "preview_embedded": true
+   }
   }
  ],
- "media_note": "All 001-019 main posts are amplify videos; previews are mid-frame JPEG posters (~800px)."
+ "media_note": "All 001-020 main posts are amplify videos; previews are mid-frame JPEG posters (~800px)."
 }
